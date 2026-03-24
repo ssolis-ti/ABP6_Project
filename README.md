@@ -2,6 +2,8 @@
 
 Aplicación web desarrollada en Django para la gestión eficiente de tareas y proyectos, desarrollada como evaluación del Módulo 6.
 
+<img width="1910" height="916" alt="mstsc_nVgCxHrGnN" src="https://github.com/user-attachments/assets/7a94f8b2-7cfe-45ad-a0fe-cc97b680f81d" />
+
 ## 🛠️ Tecnologías
 - Python 3.12+
 - Django 6.0
