@@ -1,0 +1,151 @@
+:root {
+    --graphite-dark: #121212;
+    --graphite-base: #1e1e1e;
+    --graphite-card: #252525;
+    --graphite-border: #444444;
+    --graphite-text: #ffffff; /* pure white for main text */
+    --graphite-muted: #d1d1d1; /* light gray/off-white for details */
+    --accent-color: #d4af37; /* Rich Gold */
+    --accent-glow: rgba(212, 175, 55, 0.4);
+    --accent-hover: #f1c40f; /* Brighter Amber/Gold */
+    --accent-gradient: linear-gradient(135deg, #d4af37 0%, #8a6d3b 100%);
+}
+
+body {
+    background-color: var(--graphite-dark);
+    font-family: 'Inter', sans-serif;
+    color: var(--graphite-text);
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background: var(--graphite-base) !important;
+    border-bottom: 1px solid var(--graphite-border);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--accent-color) !important;
+}
+
+.auth-card {
+    background: var(--graphite-card);
+    border: 1px solid var(--graphite-border);
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    padding: 3rem;
+    color: var(--graphite-text);
+}
+
+.card {
+    background: var(--graphite-card);
+    border: 1px solid var(--graphite-border);
+    color: var(--graphite-text);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    color: var(--graphite-dark);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* Form Styling */
+form label {
+    color: var(--graphite-muted);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+form input[type="text"], 
+form input[type="password"],
+form input[type="email"],
+form textarea,
+form select {
+    background-color: var(--graphite-base);
+    border: 1px solid var(--graphite-border);
+    color: var(--graphite-text);
+    padding: 0.8rem;
+    border-radius: 6px;
+    margin-bottom: 1.2rem;
+    width: 100%;
+}
+
+form input:focus {
+    border-color: var(--accent-color);
+    background-color: #2a2a2a;
+    outline: none;
+    box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.text-primary {
+    color: var(--accent-color) !important;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+.btn-outline-primary {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--accent-color);
+    color: var(--graphite-dark);
+}
+
+.bg-primary {
+    background: var(--accent-gradient) !important;
+    background-color: var(--accent-color) !important;
+}
+
+.btn-outline-danger {
+    border-color: #ff4d4d;
+    color: #ff4d4d;
+}
+
+.btn-outline-danger:hover {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+/* Sobrescribir fondos específicos para Título y Nombre a Blanco */
+#id_nombre, #id_titulo {
+    background-color: #ffffff !important;
+    color: #121212 !important;
+    font-weight: 600;
+}
+
+.alert {
+    background-color: var(--graphite-base);
+    border: 1px solid var(--graphite-border);
+    color: var(--graphite-text);
+}

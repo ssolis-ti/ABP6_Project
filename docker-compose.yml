@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    # Comando default si estás en desarrollo, para Producción usa gunicorn (ej: gunicorn core.wsgi:application --bind 0.0.0.0:8000)
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+      - static_volume:/app/staticfiles
+      - media_volume:/app/media
+    ports:
+      - "8013:8000"
+    env_file:
+      - .env
+    container_name: abp6-web
+    depends_on:
+      db:
+        condition: service_healthy
+    # Ideal para habilitar PDB local si desarrollas:
+    stdin_open: true
+    tty: true
+
+  db:
+    image: postgres:15-alpine
+    container_name: abp6-db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:

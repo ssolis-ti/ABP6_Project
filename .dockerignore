@@ -1,0 +1,15 @@
+.git
+.gitignore
+.env
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+db.sqlite3
+.pytest_cache/
+htmlcov/
+*.log
+docker-compose.override.yml

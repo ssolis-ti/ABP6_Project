@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-white fw-bold">Mis Tareas</h2>
+    <a href="{% url 'task_create' %}" class="btn btn-primary px-4">+ Nueva Tarea</a>
+</div>
+
+<div class="row">
+    {% for tarea in tareas %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 border-{% if tarea.prioridad == 'alta' %}danger{% elif tarea.prioridad == 'media' %}warning{% else %}info{% endif %}">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <h5 class="card-title">{{ tarea.titulo }}</h5>
+                    <span class="badge bg-{% if tarea.estado == 'completada' %}success{% elif tarea.estado == 'en_progreso' %}primary{% else %}secondary{% endif %}">{{ tarea.get_estado_display }}</span>
+                </div>
+                <h6 class="card-subtitle mb-2 text-muted">Proyecto: {{ tarea.proyecto.nombre }}</h6>
+                <p class="card-text">{{ tarea.descripcion|truncatechars:100 }}</p>
+            </div>
+            <div class="card-footer bg-transparent d-flex justify-content-between">
+                <a href="{% url 'task_update' tarea.pk %}" class="btn btn-sm btn-outline-primary">Editar</a>
+                <a href="{% url 'task_delete' tarea.pk %}" class="btn btn-sm btn-outline-danger">Eliminar</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="auth-card text-center py-5">
+            <h4 class="text-primary mb-3">📝 No tienes tareas aún</h4>
+            <p class="text-white mb-4">Todo gran logro comienza con un primer paso.</p>
+            
+            <div class="row justify-content-center text-start">
+                <div class="col-md-8 bg-dark p-4 rounded border border-secondary">
+                    <h6 class="text-primary fw-bold">💡 Ejemplo claro:</h6>
+                    <p class="small text-white-50">Si tu proyecto es "Lanzar un Podcast", una <strong>Tarea</strong> sería: "Comprar el micrófono" o "Grabar el primer episodio".</p>
+                    
+                    <h6 class="text-primary fw-bold mt-3">❓ ¿Por qué crear tareas?</h6>
+                    <p class="small text-white-50 mb-0">Las tareas convierten los deseos en acciones. Dividir un proyecto grande en pequeños pasos te quita la sensación de estar abrumado y te permite avanzar de forma constante cada día.</p>
+                </div>
+            </div>
+            
+            <a href="{% url 'task_create' %}" class="btn btn-primary mt-4 px-5">+ Crear mi primera Tarea</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
