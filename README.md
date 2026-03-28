@@ -103,10 +103,4 @@ Si prefiere una revisión mediante contenedores orquestados con **PostgreSQL**:
 
 ---
 
-##  Notas de Seguridad y Mejores Prácticas
-
-Este repositorio sigue estándares profesionales:
-- **.gitignore:** Configurado para excluir `.env`, `db.sqlite3` y entornos virtuales.
-- **Clean Code:** Código estructurado y documentado para una revisión técnica fluida.
-
 **MÓDULO 6 | ABP6 PROJECT 2026**
