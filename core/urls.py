@@ -7,3 +7,5 @@ urlpatterns = [
     path('accounts/', include('users.urls')), # Registro de usuarios
     path('', include('tasks.urls')),
 ]
+
+handler404 = 'django.views.defaults.page_not_found'

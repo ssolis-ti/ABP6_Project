@@ -1,8 +1,11 @@
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Tarea, Proyecto
 from .forms import TareaForm, ProyectoForm
+
+class LandingPageView(TemplateView):
+    template_name = 'landing.html'
 
 class ProyectoListView(LoginRequiredMixin, ListView):
     model = Proyecto

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}404 - Página no encontrada{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center" style="min-height: 70vh;">
+    <div class="col-md-6 text-center">
+        <div class="auth-card p-5">
+            <h1 class="display-1 text-primary fw-bold mb-4">404</h1>
+            <h2 class="mb-4">Parece que te has perdido en el vacío, Zeta.</h2>
+            <p class="text-muted mb-5">
+                La página que estás buscando no existe o ha sido movida. 
+                Asegúrate de haber escrito correctamente la dirección.
+            </p>
+            <a href="{% url 'proyecto_list' %}" class="btn btn-primary px-5 py-3">
+                Volver a Mis Proyectos
+            </a>
+            <div class="mt-4">
+                <small class="text-muted italic">ZETA-DJANGO-ORCHESTRATOR | 404_ERR_CODE</small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

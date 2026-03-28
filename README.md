@@ -1,77 +1,88 @@
-# ZETA | Gestión de Tareas y Proyectos - ABP 6
+# 🧬 ZETA | ORDEN Y PROGRESO (ABP 6)
 
-Aplicación web desarrollada en Django para la gestión eficiente de tareas y proyectos, desarrollada como evaluación del Módulo 6.
+Bienvenido al **Gestor de Proyectos Zeta**, una solución robusta y modular desarrollada con Django 6.0.2. Este sistema ha sido diseñado bajo los pilares de **seguridad, escalabilidad y una experiencia de usuario quirúrgica**.
 
-<img width="1910" height="916" alt="mstsc_nVgCxHrGnN" src="https://github.com/user-attachments/assets/7a94f8b2-7cfe-45ad-a0fe-cc97b680f81d" />
+---
+
+<img width="1910" height="916" alt="Zeta Interface" src="https://github.com/user-attachments/assets/7a94f8b2-7cfe-45ad-a0fe-cc97b680f81d" />
 
 ## 🛠️ Tecnologías
-- Python 3.12+
-- Django 6.0
-- SQLite3 (Desarrollo)
-- Bootstrap 5 (Frontend)
-- Docker & Docker Compose (Opcional para containerización)
+- **Backend:** Python 3.12+ / Django 6.0+
+- **Database:** SQLite3 (Desarrollo) / PostgreSQL (Producción/Docker)
+- **Frontend:** Bootstrap 5 (Estética Dark Mode Zeta)
+- **Infraestructura:** Docker & Docker Compose
 
-## 🚀 Instalación y Uso Local (Entorno Virtual)
+---
 
-1. Clonar el repositorio y navegar a la carpeta raíz:
-   ```bash
-   cd ABP6_Project
-   ```
+## 🚀 Guía de Revisión: Despliegue en Entorno Virtual (Recomendado)
 
-2. Crear y activar un entorno virtual:
-   ```bash
-   python -m venv venv
-   # En Windows:
-   venv\Scripts\activate
-   # En macOS/Linux:
-   source venv/bin/activate
-   ```
+Siga estos pasos simplificados para desplegar la aplicación localmente en menos de 5 minutos:
 
-3. Instalar dependencias:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 1. Preparación del Entorno
+Active el entorno virtual incluido en el proyecto:
+- **Windows:** `.\venv\Scripts\activate`
+- **Linux/macOS:** `source venv/bin/activate`
 
-4. Realizar migraciones de la base de datos:
-   ```bash
-   python manage.py migrate
-   ```
-
-5. Crear superusuario (opcional para acceder a /admin):
-   ```bash
-   python manage.py createsuperuser
-   ```
-
-6. Levantar servidor local:
-   ```bash
-   python manage.py runserver
-   ```
-   Acceder en: http://127.0.0.1:8000/
-
-## 🐳 Uso con Docker
-
-Si prefieres ejecutar la aplicación mediante contenedores de forma aislada:
-
-1. Levantar el entorno (asegúrate de estar dentro de `ABP6_Project`):
-   ```bash
-   docker-compose up --build -d
-   ```
-2. Acceder en: **http://localhost:8013**
-
-3. Crear Superusuario (para administrar desde /admin):
-   ```bash
-   docker exec -it abp6-web python manage.py createsuperuser
-   ```
-
-
-## 🧪 Pruebas Unitarias
-
-Para verificar el correcto funcionamiento de los modelos y la seguridad de las rutas, ejecuta la suite de pruebas automatizadas:
+### 2. Instalación de Dependencias
+Asegúrese de tener instalados los paquetes necesarios:
 ```bash
-python manage.py test
+pip install -r requirements.txt
 ```
 
-## 🔐 Seguridad y Funcionalidades Principales
-- **Protección de rutas:** Todas las URLs (restringidas) utilizan `LoginRequiredMixin`.
-- **Aislamiento de datos:** Mediante consultas QuerySet (`get_queryset`), nos aseguramos de que los usuarios únicamente puedan ver y administrar sus propios Proyectos y Tareas.
-- **Protección CSRF:** Incluida en cada envío de formulario.
+### 3. Configuración de Base de Datos y Usuarios
+Ejecute las migraciones y cree su acceso administrativo:
+```bash
+python manage.py migrate
+python manage.py createsuperuser
+```
+*(Siga las instrucciones en pantalla para definir su usuario y contraseña)*
+
+### 4. Lanzamiento del Sistema
+Inicie el servidor de desarrollo:
+```bash
+python manage.py runserver
+```
+Acceda mediante: **http://127.0.0.1:8000/**
+
+---
+
+## 🐳 Despliegue Independiente con Docker
+
+Si prefiere una revisión mediante contenedores orquestados con **PostgreSQL**:
+
+1. Asegúrese de tener Docker Desktop iniciado.
+2. En la raíz del proyecto, ejecute:
+   ```bash
+   docker compose up --build -d
+   ```
+3. Acceda al sistema en: **http://localhost:8013/**
+
+---
+
+## ⚙️ Características Técnicas (ZETA Standard)
+
+- **Landing Page Premium:** Interfaz de alto impacto con guía de uso integrada.
+- **Gestión de Identidad:** Registro de usuarios con validación de Email.
+- **Arquitectura Modular:** Separación clara entre `core`, `tasks` (proyectos/tareas) y `users`.
+- **Manejo de Errores:** Página 404 personalizada bajo la estética Zeta.
+- **Seguridad:** Implementación de `LoginRequiredMixin` y protección CSRF reforzada.
+
+---
+
+## 📂 Organización del Repositorio
+
+- `core/`: Configuración maestra del orquestador Django.
+- `tasks/`: Lógica de negocio para proyectos y tareas.
+- `users/`: Gestión de cuentas y perfiles.
+- `docs/`: Documentación técnica de arquitectura detallada.
+- `templates/`: Plantillas HTML con diseño Dark Mode premium.
+
+---
+
+## 🛡️ Notas de Seguridad y Mejores Prácticas
+
+Este repositorio sigue estándares profesionales:
+- **.gitignore:** Configurado para excluir `.env`, `db.sqlite3` y entornos virtuales.
+- **Clean Code:** Código estructurado y documentado para una revisión técnica fluida.
+
+**MÓDULO 6 | ABP6 PROJECT 2026**

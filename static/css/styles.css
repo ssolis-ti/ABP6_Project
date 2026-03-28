@@ -102,6 +102,18 @@ form input:focus {
     color: var(--accent-color) !important;
 }
 
+.text-muted {
+    color: #b0b0b0 !important; /* Lighter gray for better visibility on dark */
+}
+
+.lead.text-muted {
+    color: #e0e0e0 !important; /* Even lighter for the hero description */
+}
+
+.text-zeta-green {
+    color: #a2ffaf !important; /* Light green for better contrast and Zeta style */
+}
+
 a {
     color: var(--accent-color);
     text-decoration: none;

@@ -3,7 +3,7 @@ Django==6.0.2
 gunicorn==21.2.0
 
 # Base de datos
-psycopg2-binary==2.9.9
+# psycopg2-binary==2.9.9
 
 # Útiles para leer de variables de entorno (altamente recomendado en docker)
 django-environ==0.11.2
