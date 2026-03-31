@@ -1,6 +1,6 @@
 # 🧬 ZETA | GESTOR DE PROYECTOS (ABP 6)
 
-Bienvenido al **Gestor de Proyectos Zeta**, una solución robusta y modular desarrollada con Django 6.0.2. **.
+Bienvenido al **Gestor de Proyectos**, una solución robusta y modular desarrollada con Django 6.0.2. **.
 
 ---
 
@@ -19,7 +19,7 @@ Bienvenido al **Gestor de Proyectos Zeta**, una solución robusta y modular desa
 Siga este manual paso a paso para levantar la plataforma en su entorno local partiendo desde un estado limpio.
 
 ### 1. Variables de Entorno (Requisito Seguridad)
-El sistema está protegido criptográficamente y requiere variables para operar.
+Requiere variables para operar.
 1. Localice el archivo `env.example` en la raíz del proyecto.
 2. Realice una copia exacta de este y renómbrela a **`.env`** (debe incluir el punto inicial).
 3. *(Las configuraciones para desarrollo local ya vienen listas por defecto en ese archivo).*
@@ -88,7 +88,7 @@ Si prefiere una revisión mediante contenedores orquestados con **PostgreSQL**:
 - **Landing Page:** Interfaz de alto impacto con guía de uso integrada.
 - **Gestión de Identidad:** Registro de usuarios con validación de Email.
 - **Arquitectura Modular:** Separación clara entre `core`, `tasks` (proyectos/tareas) y `users`.
-- **Manejo de Errores:** Página 404 personalizada bajo la estética Zeta.
+- **Manejo de Errores:** Página 404
 - **Seguridad:** Implementación de `LoginRequiredMixin` y protección CSRF reforzada.
 
 ---
